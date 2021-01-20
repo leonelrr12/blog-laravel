@@ -9,6 +9,13 @@ class Tag extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'slug', 'color'];
+
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+    
     // Relation Many to Many
     public function posts()
     {
